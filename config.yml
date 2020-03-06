@@ -1,0 +1,143 @@
+#Hello there :)
+#If you enjoy my work, please rate it on spigotmc
+#and you can donate me, I'm a solo dev so Thank you very much :)
+#paypal: https://www.paypal.me/tothviktor
+#I'm glad you if you use my plugin!
+#
+#You can report bugs on my github page
+#github: https://github.com/Fighter20000/superjoin
+#
+#
+#
+#default join message
+default-join-message:
+  #disable join-message for every player in the server!
+  enable: true
+  #also you can disable specific player with '/sj disable <player-name>' command
+  #If you have op on server, your message will be invisible for every player!
+  hide-operator-join: false
+  #Every online player can hear this sound!
+  #More sounds
+  #https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Sound.html
+  sound-enable: true
+  join-sound: 'BLOCK_WOODEN_DOOR_OPEN'
+  #JoinMessage
+  #MultiLine support!
+  message:
+  - '&e{player-name} &7joined the game'
+
+default-quit-message:
+  #disable quit-message for every player in the server!
+  enable: true
+  #also you can disable specific player with '/sj disable <player-name>' command
+  #If you have op on server, your message will be invisible for every player!
+  hide-operator-quit: false
+  #Every online player can hear this sound!
+  #More sounds
+  #https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Sound.html (1.15.+)
+  sound-enable: true
+  quit-sound: 'BLOCK_ANVIL_DESTROY'
+  #QuitMessage
+  #MultiLine support!
+  message:
+  - '&e{player-name} &7left the game'
+ 
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+#You can setting up the max online player!
+Fake-Max-Players: 200
+Fake-Online-Players: 0
+
+join-firework:
+  enable: true
+  #Firework types:
+  #- BALL
+  #- BALL_LARGE
+  #- BURST
+  #- CREEPER
+  #- STAR
+  type: 'BALL'
+  flicker: true
+  #It requires a little performance
+  trail: false
+  #RGB Color support
+  #create own color at:
+  #https://www.rapidtables.com/web/color/RGB_Color.html
+  #You can't add more color yet!
+  color:
+    R: 245
+    G: 16
+    B: 16
+  color2:
+    R: 255
+    G: 255
+    B: 255
+  color3:
+    R: 20
+    G: 120
+    B: 35
+    
+join-motd:
+  enable: true
+  message:
+  - '&7&m----------------------'
+  - '&8# &7Welcome &f{player-name} &7to the server'
+  - ''
+  - '&8# &fPlease read the rules &e/rules'
+  - '&8# &fCeheck my website &2/website'
+  - '&8# &fVote my server &3/vote'
+  - ''
+  - '&7&m----------------------'
+  
+first-join-motd:
+  #You can disable first-join-motd
+  enable: true
+  #MultiLine support!
+  message: 
+  - '&7&m----------------------'
+  - '&8# &7Welcome &f{player-name} &7for first time :D'
+  - ''
+  - '&8# &fPlease read the rules &e/rules'
+  - '&8# &fCeheck my website &2/website'
+  - '&8# &fVote my server &3/vote'
+  - ''
+  - '&7&m----------------------'
+  
+join-title:
+  #You can disable title
+  enable: true
+  fadein: 20
+  stay: 80
+  fadeout: 20
+  title:
+    #MultiLine: not supported  
+    message:
+    - '&7Welcome &f{player-name}'
+  sub-title:
+    #MultiLine: not supported  
+    message:
+    - '&6&nYourServer'
+
+first-join-title:
+  #You can disable first-title
+  enable: true
+  fadein: 20
+  stay: 80
+  fadeout: 20
+  title:
+    #MultiLine: not supported 
+    message:
+    - ''
+  sub-title:
+    #MultiLine: not supported  
+    message:
+    - '&7Welcome &d&n{player-name} &7for first time'  
+  
+first-join-message:
+  #You can disable first-join-message, but when a player joined to the server at first time, it doesn't send broadcast message for every player
+  enable: true
+  #first-join message
+  #MultiLine support!
+  message:
+  - '&aWelcome &2{player-name} &afor first time'
+  
+  

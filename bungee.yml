@@ -1,0 +1,7 @@
+name: SuperJoin-Bungee
+main: com.bungee.superjoin.Main.BungeeMain
+version: 1.0.0
+author: Fighter-HUN
+commands:
+  superjoin:
+    description: Main command of superjoin-bungee version

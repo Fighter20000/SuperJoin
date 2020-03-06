@@ -1,0 +1,20 @@
+#When you joining to the network
+network-join-message:
+  enable: true
+  message:
+  - "&7{player-name} &ajoined the network!"
+#When you leaving from the network
+network-quit-message:
+  enable: true
+  message:
+  - "&7{player-name} &cleft the network!"
+  
+server-join-message:
+  enable: true
+  message:
+  - "&8[&7{server}&8]  &7{player-name} &ajoined the &2{target-server} &aserver!"
+
+server-quit-message:
+  enable: true
+  message:
+  - "&8[&7{server}&8] &7{player-name} &cleft the &4{target-server} &cserver!"

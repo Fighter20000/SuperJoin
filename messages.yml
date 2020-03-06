@@ -1,0 +1,32 @@
+#Color code edit for help commands
+# color-code-1 for '#'
+# color-code-2 for 'command' in help page
+# color-code-3 for '-'
+# color-code-4 for 'what can you do with the command'
+color-code-1: '&8'
+color-code-2: '&f'
+color-code-3: '&7'
+color-code-4: '&6'
+help-message: "&7-------- &8( &6SuperJoin &7| &eCommands &8) &7--------"
+unknown-subcommand: "&6[SuperJoin] &cUnknown subcommand."
+usage-message: "&6[SuperJoin] &cPlease use /superjoin help"
+no-permission: "&6[SuperJoin] &cYou don't have permission for this command."
+reload-message: "&6[SuperJoin] &aConfiguration reloaded."
+player-already-exists: "&6[SuperJoin] &cPlayer already exists."
+not-online-player: "&6[SuperJoin] &cPlayer not online."
+player-not-found: "&6[SuperJoin] &cPlayer not found."
+player-disable-message: "&6[SuperJoin] &cPlayer disabled."
+player-enable-message: "&6[SuperJoin] &aPlayer enabled."
+player-disable-usage: "&6[SuperJoin] &c/superjoin disable <player-name>"
+player-enable-usage: "&6[SuperJoin] &c/superjoin enable <player-name>"
+player-create-usage: "&6[SuperJoin] &c/superjoin create player <player-name>"
+player-remove-usage: "&6[SuperJoin] &c/superjoin remove player <player-name>"
+player-create-message: "&6[SuperJoin] &aYou successful created a custom player."
+player-remove-message: "&6[SuperJoin] &aYou successful removed a custom player."
+#
+group-create-usage: "&6[SuperJoin] &c/superjoin create group <group>"
+group-remove-usage: "&6[SuperJoin] &c/superjoin remove group <group>"
+group-already-exists: "&6[SuperJoin] &cGroup already exists."
+group-create-message: "&6[SuperJoin] &aYou successful created a custom group."
+group-remove-message: "&6[SuperJoin] &cYou successful removed a group."
+group-not-found: "&6[SuperJoin] &cGroup not found."

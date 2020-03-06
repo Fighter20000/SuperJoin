@@ -1,0 +1,8 @@
+name: SuperJoin
+main: com.fighter.SuperJoin.Main.Main
+version: 1.0.2
+softdepend: [PlaceholderAPI, Vault]
+commands:
+   superjoin:
+     description: Main command for SuperJoin
+     aliases: [sj]
