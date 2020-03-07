@@ -3,10 +3,9 @@ package com.fighter.SuperJoin.Listeners;
 import org.bukkit.Bukkit;
 import org.bukkit.Color;
 import org.bukkit.FireworkEffect;
+import org.bukkit.FireworkEffect.Builder;
 import org.bukkit.FireworkEffect.Type;
-import org.bukkit.Location;
 import org.bukkit.World;
-import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Firework;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -78,45 +77,23 @@ public class JoinListener implements Listener {
 								String.join("\n", plugin.getConfig().getStringList("default-join-message.message")),
 								player, world));
 						if(plugin.getConfig().getBoolean("join-firework.enable")) {
-						Location loc = player.getLocation();
-
-						Firework fw = (Firework) loc.getWorld().spawnEntity(loc, EntityType.FIREWORK);
-
-						FireworkMeta fwm = fw.getFireworkMeta();
-
-						fwm.setPower(3);
-
-						fwm.addEffect(FireworkEffect.builder()
-								.withColor(Color.fromRGB(plugin.getConfig().getInt("join-firework.color.R"), plugin.getConfig().getInt("join-firework.color.G"),
-										plugin.getConfig().getInt("join-firework.color.B")))
-								.flicker(plugin.getConfig().getBoolean("join-firework.flicker"))
-								.with(Type.valueOf(plugin.getConfig().getString("join-firework.type")))
-								.trail(plugin.getConfig().getBoolean("join-firework.trail")).build());
-						fwm.addEffect(FireworkEffect.builder()
-								.withColor(Color.fromRGB(plugin.getConfig().getInt("join-firework.color2.R"), plugin.getConfig().getInt("join-firework.color2.G"),
-										plugin.getConfig().getInt("join-firework.color2.B")))
-								.flicker(plugin.getConfig().getBoolean("join-firework.flicker"))
-								.with(Type.valueOf(plugin.getConfig().getString("join-firework.type")))
-								.trail(plugin.getConfig().getBoolean("join-firework.trail")).build());
-						fwm.addEffect(FireworkEffect.builder()
-								.withColor(Color.fromRGB(plugin.getConfig().getInt("join-firework.color3.R"), plugin.getConfig().getInt("join-firework.color3.G"),
-										plugin.getConfig().getInt("join-firework.color3.B")))
-								.flicker(plugin.getConfig().getBoolean("join-firework.flicker"))
-								.with(Type.valueOf(plugin.getConfig().getString("join-firework.type")))
-								.trail(plugin.getConfig().getBoolean("join-firework.trail")).build());
-
-						fw.setFireworkMeta(fwm);
 						
-						int length = 100;
+				Firework fw = player.getWorld().spawn(player.getLocation(), Firework.class);
+				
+				FireworkMeta fwm = fw.getFireworkMeta();
+				
+				Builder builder = FireworkEffect.builder();
+
+				fwm.addEffect(builder.withColor(Color.fromRGB(plugin.getConfig().getInt("join-firework.color.R"), plugin.getConfig().getInt("join-firework.color.G"),plugin.getConfig().getInt("join-firework.color.B"))).flicker(plugin.getConfig().getBoolean("join-firework.flicker")).with(Type.valueOf(plugin.getConfig().getString("join-firework.type"))).trail(plugin.getConfig().getBoolean("join-firework.trail")).build());
+				
+				fwm.addEffect(builder.withColor(Color.fromRGB(plugin.getConfig().getInt("join-firework.color2.R"), plugin.getConfig().getInt("join-firework.color2.G"),plugin.getConfig().getInt("join-firework.color2.B"))).flicker(plugin.getConfig().getBoolean("join-firework.flicker")).with(Type.valueOf(plugin.getConfig().getString("join-firework.type"))).trail(plugin.getConfig().getBoolean("join-firework.trail")).build());
+				
+				fwm.addEffect(builder.withColor(Color.fromRGB(plugin.getConfig().getInt("join-firework.color3.R"), plugin.getConfig().getInt("join-firework.color3.G"),plugin.getConfig().getInt("join-firework.color3.B"))).flicker(plugin.getConfig().getBoolean("join-firework.flicker")).with(Type.valueOf(plugin.getConfig().getString("join-firework.type"))).trail(plugin.getConfig().getBoolean("join-firework.trail")).build());
+				
+				fwm.setPower((int)1);
+				
+				fw.setFireworkMeta(fwm);
 						
-						for(int i = 0; i < length  ; i++) {
-							
-							if(i == 90) {
-								
-								fw.detonate();
-								break;
-							}
-						}
 						}
 					}
 
