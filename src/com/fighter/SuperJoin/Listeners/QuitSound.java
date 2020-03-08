@@ -89,25 +89,40 @@ public class QuitSound implements Listener {
 
 							} else {
 
-								if (config.getPlayer2().getString("customPlayers." + player.getName())
-										.contains(player.getName())) {
+								if (config.getPlayer2().getString("customPlayers") != null) {
+									if (config.getPlayer2().getString("customPlayers." + player.getName()) != null) {
+										if (config.getPlayer2().getString("customPlayers." + player.getName())
+												.contains(player.getName())) {
+											if (config.getPlayer2()
+													.getBoolean("customPlayers." + player.getName() + ".enable")) {
+												if (config.getPlayer2().getString(
+														"customPlayers." + player.getName() + ".quit-sound") != null) {
+													online.playSound(loc,
+															Sound.valueOf(config.getPlayer2().getString(
+																	"customPlayers." + player.getName() + ".quit-sound")),
+															1, 1);
+												}
+											}
 
-									if (config.getPlayer2()
-											.getBoolean("customPlayers." + player.getName() + ".enable")) {
-										if (config.getPlayer2().getString(
-												"customPlayers." + player.getName() + ".quit-sound") != null) {
+										} else {
+											if (plugin.getConfig().getBoolean("default-quit-message.sound-enable")) {
+												online.playSound(loc, Sound.valueOf(
+														plugin.getConfig().getString("default-quit-message.quit-sound")), 1, 1);
+											}
+										}
+									} else {
+										if (plugin.getConfig().getBoolean("default-quit-message.sound-enable")) {
 											online.playSound(loc,
-													Sound.valueOf(config.getPlayer2().getString(
-															"customPlayers." + player.getName() + ".quit-sound")),
+													Sound.valueOf(
+															plugin.getConfig().getString("default-quit-message.quit-sound")),
 													1, 1);
 										}
 									}
-
 								} else {
-
 									if (plugin.getConfig().getBoolean("default-quit-message.sound-enable")) {
-										online.playSound(loc, Sound.valueOf(
-												plugin.getConfig().getString("default-quit-message.quit-sound")), 1, 1);
+										online.playSound(loc,
+												Sound.valueOf(plugin.getConfig().getString("default-quit-message.quit-sound")),
+												1, 1);
 									}
 								}
 							}

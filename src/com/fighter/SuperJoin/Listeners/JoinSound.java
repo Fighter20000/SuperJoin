@@ -79,20 +79,30 @@ public class JoinSound implements Listener {
 					    	
 					    } else {
 
-					    	if(config.getPlayer2().getString("customPlayers."+player.getName()).contains(player.getName())) {
-					    		
-					    		if(config.getPlayer2().getBoolean("customPlayers."+player.getName()+".enable")) {
-					    		if(config.getPlayer2().getString("customPlayers."+player.getName()+".join-sound") != null) {
-					    		online.playSound(loc, Sound.valueOf(config.getPlayer2().getString("customPlayers."+player.getName()+".join-sound")), 1, 1);
-					    		}
-					    		}
-					    		
-					    	} else {
-					    	
-					    		if(plugin.getConfig().getBoolean("default-join-message.sound-enable")) {
+					    	if(config.getPlayer2().getString("customPlayers") != null) {
+								  if(config.getPlayer2().getString("customPlayers."+player.getName()) != null) {
+									if(config.getPlayer2().getString("customPlayers."+player.getName()).contains(player.getName())) {
+										if(config.getPlayer2().getBoolean("customPlayers."+player.getName()+".enable")) {
+											if(config.getPlayer2().getString("customPlayers."+player.getName()+".join-sound") != null) {	
+												online.playSound(loc, Sound.valueOf(config.getPlayer2().getString("customPlayers."+player.getName()+".join-sound")), 1, 1);
+											}
+										}
+									
+								} else {
+									if(plugin.getConfig().getBoolean("default-join-message.sound-enable")) {
 									online.playSound(loc, Sound.valueOf(plugin.getConfig().getString("default-join-message.join-sound")), 1, 1);
 									}
-					    	}
+								}
+							  } else {
+								  if(plugin.getConfig().getBoolean("default-join-message.sound-enable")) {
+										online.playSound(loc, Sound.valueOf(plugin.getConfig().getString("default-join-message.join-sound")), 1, 1);
+										}
+							  }
+							} else {
+								if(plugin.getConfig().getBoolean("default-join-message.sound-enable")) {
+									online.playSound(loc, Sound.valueOf(plugin.getConfig().getString("default-join-message.join-sound")), 1, 1);
+									}
+							}
 					    }
 				  }
 				} else {
